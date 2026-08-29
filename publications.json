@@ -1,0 +1,58 @@
+[
+  {
+    "title": "HyOPTEnsemble: Custom-weighted soft-voting hyperparameter optimization ensemble model with explainable AI for predicting mental state among university students",
+    "year": 2026,
+    "venue": "Discover Artificial Intelligence",
+    "authors": ["R. Ahmed", "N. Fahad", "K. Bhattacharjee", "M. S. U. Miah", "M. J. Hossen"],
+    "citations": 0,
+    "doi": ""
+  },
+  {
+    "title": "Generative artificial intelligence in clinical practice: A mini-review of applications, benefits, and limitations (2020–2025)",
+    "year": 2025,
+    "venue": "Frontiers in Digital Health",
+    "authors": ["N. Fahad", "S. Benta Hasan", "R. Ahmed", "R. Islam Rabbi", "F. Ahmed", "M. J. Hossen", "T. H. Liew"],
+    "citations": 0,
+    "doi": ""
+  },
+  {
+    "title": "Two-stage load scheduling optimization for balancing demand-side and supply-side objectives",
+    "year": 2025,
+    "venue": "IEEE EEEIC & I&CPS Europe",
+    "authors": ["R. Ahmed", "W. N. Tan", "M. T. Gan", "S. C. Yip"],
+    "citations": 0,
+    "doi": ""
+  },
+  {
+    "title": "Advancements in human movement monitoring: A comprehensive approach leveraging deep learning and machine learning techniques",
+    "year": 2025,
+    "venue": "AIP Conference Proceedings",
+    "authors": ["F. S. Prity", "N. Fahad", "R. Ahmed", "M. K. Morol", "K. O. M. Goh", "R. J. Sadib", "K. A. Rahman"],
+    "citations": 0,
+    "doi": ""
+  },
+  {
+    "title": "A novel integrated logistic regression model enhanced with recursive feature elimination and explainable artificial intelligence for dementia prediction",
+    "year": 2024,
+    "venue": "Healthcare Analytics",
+    "authors": ["R. Ahmed", "N. Fahad", "M. S. U. Miah", "M. J. Hossen", "M. K. Morol", "M. Mahmud", "M. M. Rahman"],
+    "citations": 0,
+    "doi": ""
+  },
+  {
+    "title": "MIC: Medical image classification using chest X-ray (COVID-19 & pneumonia) dataset with the help of CNN and customized CNN",
+    "year": 2024,
+    "venue": "International Conference on Computing Advancements",
+    "authors": ["N. Fahad", "R. Ahmed", "F. Jahan", "R. Jamal Sadib", "M. K. Morol", "M. A. A. Jubair"],
+    "citations": 0,
+    "doi": ""
+  },
+  {
+    "title": "Preventing students’ mental health problems with the help of data mining",
+    "year": 2024,
+    "venue": "International Journal of Computing",
+    "authors": ["M. N. Hossain", "N. Fahad", "R. Ahmed", "A. Sen", "M. S. Al Huda", "M. I. Hossen"],
+    "citations": 0,
+    "doi": ""
+  }
+]

@@ -1,0 +1,32 @@
+name: Update Publications
+
+on:
+  schedule:
+    - cron: '0 0 * * 1' # Runs every Monday at 00:00 UTC
+  workflow_dispatch: # Allows you to trigger it manually from the GitHub UI
+
+jobs:
+  update-pubs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch publications from Semantic Scholar
+        run: python fetch_publications.py
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add publications.json
+          git diff --staged --quiet || git commit -m "chore: auto-update publications via Semantic Scholar API"
+          git push

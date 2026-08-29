@@ -27,8 +27,7 @@
     <!-- Header / Hero -->
     <header class="hero">
         <div class="container">
-            <!-- PROFILE PHOTO: Replace 'profile.jpg' with your actual image file name -->
-            <img src="profile.jpg" alt="Rasel Ahmed" class="profile-photo">
+            <img src="profile.jpeg" alt="Rasel Ahmed" class="profile-photo">
             
             <h1>Rasel Ahmed</h1>
             <p class="subtitle">Prospective PhD Researcher | Machine Learning, Explainable AI & Agentic AI</p>
@@ -46,7 +45,7 @@
         <!-- Profile & Interests -->
         <section id="profile" class="section fade-in">
             <h2>Research Profile</h2>
-            <p>Prospective PhD researcher with a Software Engineering degree and research experience in machine learning, explainable AI, healthcare informatics, and mathematical optimization, alongside a growing interest in agentic AI. My FRGS-funded master’s research focuses on mathematical model development and optimization, while my earlier work addressed dementia and mental-state prediction and medical-image analysis. I have co-authored five journal articles (four published in Q1/Q2) and three conference papers, including a first-author IEEE EEEIC-2025 paper, with more than 88 citations and collaborations spanning Bangladesh, the USA, the UK, and Malaysia. Through doctoral study, I aim to develop reliable, interpretable, and agentic AI systems for healthcare and other high-impact decision-making applications.</p>
+            <p>Prospective PhD researcher with a Software Engineering degree and research experience in machine learning, explainable AI, healthcare informatics, and mathematical optimization, alongside a growing interest in agentic AI. My FRGS-funded master’s research focuses on mathematical model development, optimization, while my earlier work addressed dementia and mental-state prediction and medical-image analysis. I have co-authored five journal articles (four published in Q1/Q2) and three conference papers, including a first-author IEEE EEEIC-2025 paper, with more than 88 citations and collaborations spanning Bangladesh, the USA, the UK, and Malaysia. Through doctoral study, I aim to develop reliable, interpretable, and agentic AI systems for healthcare and other high-impact decision-making applications.</p>
             
             <h3 class="sub-heading">Research Interests</h3>
             <p class="interests">Machine Learning · Explainable AI · Agentic AI · Healthcare Informatics · Mathematical Optimization · Artificial Intelligence</p>
@@ -136,47 +135,14 @@
             </div>
         </section>
 
-        <!-- Publications -->
+        <!-- Publications (DYNAMIC - Loads from publications.json) -->
         <section id="publications" class="section fade-in">
             <h2>Selected Publications</h2>
-            
-            <h3 class="sub-heading">Journal Articles</h3>
-            <div class="publication">
-                <div class="pub-title">HyOPTEnsemble: Custom-weighted soft-voting hyperparameter optimization ensemble model with explainable AI for predicting mental state among university students <span class="badge">Q1</span></div>
-                <div class="pub-authors"><strong>Ahmed, R.</strong>, Fahad, N., Bhattacharjee, K., Miah, M. S. U., & Hossen, M. J. (2026).</div>
-                <div class="pub-venue">Discover Artificial Intelligence, 6, Article 136.</div>
-            </div>
-            <div class="publication">
-                <div class="pub-title">Generative artificial intelligence in clinical practice: A mini-review of applications, benefits, and limitations (2020–2025) <span class="badge">Q1</span></div>
-                <div class="pub-authors">Fahad, N., Benta Hasan, S., <strong>Ahmed, R.</strong>, Islam Rabbi, R., Ahmed, F., Hossen, M. J., & Liew, T. H. (2025).</div>
-                <div class="pub-venue">Frontiers in Digital Health, 7, 1653369.</div>
-            </div>
-            <div class="publication">
-                <div class="pub-title">A novel integrated logistic regression model enhanced with recursive feature elimination and explainable artificial intelligence for dementia prediction <span class="badge">Q1</span></div>
-                <div class="pub-authors"><strong>Ahmed, R.</strong>, Fahad, N., Miah, M. S. U., Hossen, M. J., Morol, M. K., Mahmud, M., & Rahman, M. M. (2024).</div>
-                <div class="pub-venue">Healthcare Analytics, 6, 100362.</div>
-            </div>
-            <div class="publication">
-                <div class="pub-title">Preventing students’ mental health problems with the help of data mining <span class="badge">Q3</span></div>
-                <div class="pub-authors">Hossain, M. N., Fahad, N., <strong>Ahmed, R.</strong>, Sen, A., Al Huda, M. S., & Hossen, M. I. (2024).</div>
-                <div class="pub-venue">International Journal of Computing, 23(1), 101–108.</div>
-            </div>
-
-            <h3 class="sub-heading">Conference Papers</h3>
-            <div class="publication">
-                <div class="pub-title">Two-stage load scheduling optimization for balancing demand-side and supply-side objectives <span class="badge">Scopus, WoS</span></div>
-                <div class="pub-authors"><strong>Ahmed, R.</strong>, Tan, W. N., Gan, M. T., & Yip, S. C. (2025, July).</div>
-                <div class="pub-venue">In 2025 IEEE International Conference on Environment and Electrical Engineering and 2025 IEEE Industrial and Commercial Power Systems Europe.</div>
-            </div>
-            <div class="publication">
-                <div class="pub-title">Advancements in human movement monitoring: A comprehensive approach leveraging deep learning and machine learning techniques <span class="badge">Scopus</span></div>
-                <div class="pub-authors">Prity, F. S., Fahad, N., <strong>Ahmed, R.</strong>, Morol, M. K., Goh, K. O. M., Sadib, R. J., & Rahman, K. A. (2025, October).</div>
-                <div class="pub-venue">In AIP Conference Proceedings, 3367(1), 020001.</div>
-            </div>
-            <div class="publication">
-                <div class="pub-title">MIC: Medical image classification using chest X-ray (COVID-19 & pneumonia) dataset with the help of CNN and customized CNN <span class="badge">Scopus</span></div>
-                <div class="pub-authors">Fahad, N., <strong>Ahmed, R.</strong>, Jahan, F., Jamal Sadib, R., Morol, M. K., & Jubair, M. A. A. (2024, October).</div>
-                <div class="pub-venue">In Proceedings of the 3rd International Conference on Computing Advancements, 1007–1013.</div>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 1.5rem;">
+                <em>Automatically updated weekly via Semantic Scholar API. Total citations: <span id="total-citations" style="font-weight: 700; color: var(--primary);">0</span></em>
+            </p>
+            <div id="publications-list">
+                <p>Loading publications...</p>
             </div>
         </section>
 
