@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rasel Ahmed - Prospective PhD Researcher specializing in Machine Learning, Explainable AI, and Healthcare Informatics">
+    <meta name="author" content="Rasel Ahmed">
     <title>Rasel Ahmed | Prospective PhD Researcher</title>
-    <meta name="description" content="Prospective PhD researcher specializing in Machine Learning, Explainable AI, Agentic AI, and Healthcare Informatics.">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
 </head>
 <body>
-
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo">R.A.</a>
             <ul class="nav-menu">
@@ -27,179 +26,250 @@
         </div>
     </nav>
 
-    <!-- Header / Hero -->
+    <!-- Hero Section -->
     <header class="hero">
         <div class="container">
-            <!-- PROFILE PHOTO: Replace 'profile.jpg' with your actual image file name -->
-            <img src="profile.jpeg" alt="Rasel Ahmed" class="profile-photo">
-            
+            <div class="profile-wrapper">
+                <img src="profile.jpeg" alt="Rasel Ahmed" class="profile-photo">
+            </div>
             <h1>Rasel Ahmed</h1>
             <p class="subtitle">Prospective PhD Researcher | Machine Learning, Explainable AI & Agentic AI</p>
             <div class="social-links">
-                <a href="mailto:raselahmed1337@gmail.com">✉️ Email</a>
-                <a href="https://scholar.google.com/citations?user=1qLYFGYAAAAJ&hl=en" target="_blank">🎓 Google Scholar</a>
-                <a href="https://www.linkedin.com/in/raselahmed1337/" target="_blank">💼 LinkedIn</a>
-                <a href="https://www.researchgate.net/profile/Rasel-Ahmed" target="_blank">🔬 ResearchGate</a>
-                <a href="https://github.com/raselahmed1337" target="_blank">💻 GitHub</a>
+                <a href="mailto:raselahmed1337@gmail.com" class="social-link">✉️ Email</a>
+                <a href="https://scholar.google.com/citations?user=1qLYFGYAAAAJ&hl=en" target="_blank" class="social-link">🎓 Scholar</a>
+                <a href="https://www.linkedin.com/in/raselahmed1337/" target="_blank" class="social-link"> LinkedIn</a>
+                <a href="https://www.researchgate.net/profile/Rasel-Ahmed" target="_blank" class="social-link"> ResearchGate</a>
+                <a href="https://github.com/raselahmed1337" target="_blank" class="social-link"> GitHub</a>
             </div>
         </div>
     </header>
 
-    <main class="container">
-        <!-- Profile & Interests -->
-        <section id="profile" class="section fade-in">
-            <h2>Research Profile</h2>
-            <p>Prospective PhD researcher with a Software Engineering degree and research experience in machine learning, explainable AI, healthcare informatics, and mathematical optimization, alongside a growing interest in agentic AI. My FRGS-funded master’s research focuses on mathematical model development, optimization, while my earlier work addressed dementia and mental-state prediction and medical-image analysis. I have co-authored five journal articles (four published in Q1/Q2) and three conference papers, including a first-author IEEE EEEIC-2025 paper, with more than 88 citations and collaborations spanning Bangladesh, the USA, the UK, and Malaysia. Through doctoral study, I aim to develop reliable, interpretable, and agentic AI systems for healthcare and other high-impact decision-making applications.</p>
-            
-            <h3 class="sub-heading">Research Interests</h3>
-            <p class="interests">Machine Learning · Explainable AI · Agentic AI · Healthcare Informatics · Mathematical Optimization · Artificial Intelligence</p>
-        </section>
+    <main>
+        <!-- Profile Section -->
+        <section id="profile" class="section">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2 class="section-title">Research Profile</h2>
+                </div>
+                <div class="card fade-in">
+                    <p>Prospective PhD researcher with a Software Engineering degree and research experience in machine learning, explainable AI, healthcare informatics, and mathematical optimization, alongside a growing interest in agentic AI. My FRGS-funded master's research focuses on mathematical model development and optimization, while my earlier work addressed dementia and mental-state prediction and medical-image analysis. I have co-authored five journal articles (four published in Q1/Q2) and three conference papers, including a first-author IEEE EEEIC-2025 paper, with more than 88 citations and collaborations spanning Bangladesh, the USA, the UK, and Malaysia. Through doctoral study, I aim to develop reliable, interpretable, and agentic AI systems for healthcare and other high-impact decision-making applications.</p>
+                </div>
+                
+                <div class="card fade-in">
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--primary);">Research Interests</h3>
+                    <p style="line-height: 2; color: var(--text-secondary);">Machine Learning · Explainable AI · Agentic AI · Healthcare Informatics · Mathematical Optimization · Artificial Intelligence</p>
+                </div>
 
-        <!-- Education -->
-        <section id="education" class="section fade-in">
-            <h2>Education</h2>
-            <div class="item">
-                <div class="item-header">
-                    <div>
-                        <div class="item-title">Master’s by Research in Artificial Intelligence and Engineering</div>
-                        <div class="item-subtitle">Multimedia University (MMU), Cyberjaya, Malaysia</div>
+                <!-- Stats -->
+                <div class="stats-grid fade-in">
+                    <div class="stat-card">
+                        <span class="stat-number">88+</span>
+                        <span class="stat-label">Total Citations</span>
                     </div>
-                    <div class="item-date">Aug 2024 – July 2026</div>
-                </div>
-                <div class="item-description">
-                    <ul>
-                        <li><strong>Research Focus:</strong> Mathematical Modeling, Optimization, Agentic AI</li>
-                        <li><strong>Research Funding:</strong> Fundamental Research Grant Scheme (FRGS)</li>
-                        <li><strong>Supervisor:</strong> Dr. Tan Wooi Nee</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="item">
-                <div class="item-header">
-                    <div>
-                        <div class="item-title">B.Sc. in Software Engineering</div>
-                        <div class="item-subtitle">American International University–Bangladesh (AIUB)</div>
+                    <div class="stat-card">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Journal Articles</span>
                     </div>
-                    <div class="item-date">Sept 2019 – Aug 2024</div>
-                </div>
-                <div class="item-description">
-                    <ul>
-                        <li><strong>CGPA:</strong> 3.76 / 4.00 | <strong>Faculty:</strong> Science and Technology</li>
-                    </ul>
+                    <div class="stat-card">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Conference Papers</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">4</span>
+                        <span class="stat-label">Q1 Publications</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Experience -->
-        <section id="experience" class="section fade-in">
-            <h2>Research Experience</h2>
-            <div class="item">
-                <div class="item-header">
-                    <div>
-                        <div class="item-title">Graduate Research Assistant</div>
-                        <div class="item-subtitle">Multimedia University (MMU), Cyberjaya, Malaysia</div>
+        <!-- Education Section -->
+        <section id="education" class="section">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2 class="section-title">Education</h2>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="card">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-title">Master's by Research in Artificial Intelligence and Engineering</div>
+                                <div class="timeline-subtitle">Multimedia University (MMU), Cyberjaya, Malaysia</div>
+                            </div>
+                            <span class="timeline-date">Aug 2024 – July 2026</span>
+                        </div>
+                        <div class="timeline-content">
+                            <ul>
+                                <li><strong>Research Focus:</strong> Mathematical Modeling, Optimization, Agentic AI</li>
+                                <li><strong>Research Funding:</strong> Fundamental Research Grant Scheme (FRGS)</li>
+                                <li><strong>Supervisor:</strong> Dr. Tan Wooi Nee</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="item-date">Aug 2024 – July 2026</div>
                 </div>
-                <div class="item-description">
-                    <ul>
-                        <li>Conducted FRGS-funded master’s research by developing a two-stage load-scheduling optimization model, formulating operational constraints, and evaluating demand- and supply-side trade-offs.</li>
-                        <li>Prepared a first-author IEEE conference paper through model development, validation, and technical writing under the supervision of Assistant Professor Dr. Tan Wooi Nee.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="item">
-                <div class="item-header">
-                    <div>
-                        <div class="item-title">Research Assistant (Intern → Research Assistant)</div>
-                        <div class="item-subtitle">Artificial Intelligence Research and Innovation Lab (AIRIL), Bangladesh</div>
+
+                <div class="timeline-item fade-in">
+                    <div class="card">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-title">B.Sc. in Software Engineering</div>
+                                <div class="timeline-subtitle">American International University–Bangladesh (AIUB)</div>
+                            </div>
+                            <span class="timeline-date">Sept 2019 – Aug 2024</span>
+                        </div>
+                        <div class="timeline-content">
+                            <ul>
+                                <li><strong>CGPA:</strong> 3.76 / 4.00</li>
+                                <li><strong>Faculty:</strong> Science and Technology</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="item-date">Sept 2023 – Mar 2024</div>
-                </div>
-                <div class="item-description">
-                    <ul>
-                        <li>Built and evaluated prediction workflows using feature selection, ensemble learning, and explainable AI for dementia, mental health, and student performance.</li>
-                        <li>Contributed to CNN-based medical-image classification, data analysis, and peer-reviewed manuscript preparation under the supervision of Prof. Dr. Md. Asraf Ali.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="item">
-                <div class="item-header">
-                    <div>
-                        <div class="item-title">Research Trainee Intern</div>
-                        <div class="item-subtitle">Islami Bank Training and Research Academy, Bangladesh</div>
-                    </div>
-                    <div class="item-date">Oct 2023 – Dec 2023</div>
-                </div>
-                <div class="item-description">
-                    <ul>
-                        <li>Analyzed foreign-exchange data from Islami Bank Bangladesh PLC and summarized findings for research reporting.</li>
-                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Publications (DYNAMIC - Loads from publications.json) -->
-        <section id="publications" class="section fade-in">
-            <h2>Selected Publications</h2>
-            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 1.5rem;">
-                <em>Automatically updated weekly via Semantic Scholar API. Total citations: <span id="total-citations" style="font-weight: 700; color: var(--primary);">0</span></em>
-            </p>
-            <div id="publications-list">
-                <p>Loading publications...</p>
-            </div>
-        </section>
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2 class="section-title">Research Experience</h2>
+                </div>
 
-        <!-- Skills -->
-        <section id="skills" class="section fade-in">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>🤖 AI & Research</h3>
-                    <p>Machine Learning, Ensemble Learning, Explainable AI, Agentic AI</p>
-                </div>
-                <div class="skill-category">
-                    <h3>📊 Quantitative Methods</h3>
-                    <p>Experimental Design, Mathematical Modeling, Optimization, Model Evaluation</p>
-                </div>
-                <div class="skill-category">
-                    <h3>💻 Programming</h3>
-                    <p>Python, C/C++, Bash, Rust</p>
-                </div>
-                <div class="skill-category">
-                    <h3>🗄️ Databases</h3>
-                    <p>Oracle, PostgreSQL, MySQL, NoSQL</p>
-                </div>
-                <div class="skill-category">
-                    <h3>🛠️ Tools & Workflow</h3>
-                    <p>Git/GitHub, Docker, Anaconda, LaTeX</p>
-                </div>
-                <div class="skill-category">
-                    <h3>🌍 Languages</h3>
-                    <p>English (Proficient)</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Scholarship -->
-        <section id="scholarship" class="section fade-in">
-            <h2>Scholarship</h2>
-            <div class="item">
-                <div class="item-header">
-                    <div>
-                        <div class="item-title">MMU High Achievers Research Scholarship</div>
-                        <div class="item-subtitle">Multimedia University, Cyberjaya, Malaysia</div>
+                <div class="timeline-item fade-in">
+                    <div class="card">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-title">Graduate Research Assistant</div>
+                                <div class="timeline-subtitle">Multimedia University (MMU), Cyberjaya, Malaysia</div>
+                            </div>
+                            <span class="timeline-date">Aug 2024 – July 2026</span>
+                        </div>
+                        <div class="timeline-content">
+                            <ul>
+                                <li>Conducted FRGS-funded master's research by developing a two-stage load-scheduling optimization model, formulating operational constraints, and evaluating demand- and supply-side trade-offs.</li>
+                                <li>Prepared a first-author IEEE conference paper through model development, validation, and technical writing under the supervision of Assistant Professor Dr. Tan Wooi Nee.</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="item-date">Aug 2024 – July 2026</div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="card">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-title">Research Assistant (Intern → Research Assistant)</div>
+                                <div class="timeline-subtitle">Artificial Intelligence Research and Innovation Lab (AIRIL), Bangladesh</div>
+                            </div>
+                            <span class="timeline-date">Sept 2023 – Mar 2024</span>
+                        </div>
+                        <div class="timeline-content">
+                            <ul>
+                                <li>Built and evaluated prediction workflows using feature selection, ensemble learning, and explainable AI for dementia, mental health, and student performance.</li>
+                                <li>Contributed to CNN-based medical-image classification, data analysis, and peer-reviewed manuscript preparation under the supervision of Prof. Dr. Md. Asraf Ali.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="card">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-title">Research Trainee Intern</div>
+                                <div class="timeline-subtitle">Islami Bank Training and Research Academy, Bangladesh</div>
+                            </div>
+                            <span class="timeline-date">Oct 2023 – Dec 2023</span>
+                        </div>
+                        <div class="timeline-content">
+                            <ul>
+                                <li>Analyzed foreign-exchange data from Islami Bank Bangladesh PLC and summarized findings for research reporting.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="section">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2 class="section-title">Selected Publications</h2>
+                    <p class="section-subtitle">Automatically updated weekly via Semantic Scholar API</p>
+                </div>
+                
+                <div id="publications-list" class="fade-in">
+                    <p style="text-align: center; padding: 3rem; color: var(--text-muted);">Loading publications...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2 class="section-title">Technical Skills</h2>
+                </div>
+                
+                <div class="skills-grid fade-in">
+                    <div class="skill-card">
+                        <span class="skill-icon">🤖</span>
+                        <h3 class="skill-title">AI & Research</h3>
+                        <p class="skill-description">Machine Learning, Ensemble Learning, Explainable AI, Agentic AI</p>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-icon">📊</span>
+                        <h3 class="skill-title">Quantitative Methods</h3>
+                        <p class="skill-description">Experimental Design, Mathematical Modeling, Optimization, Model Evaluation</p>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-icon">💻</span>
+                        <h3 class="skill-title">Programming</h3>
+                        <p class="skill-description">Python, C/C++, Bash, Rust</p>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-icon">🗄️</span>
+                        <h3 class="skill-title">Databases</h3>
+                        <p class="skill-description">Oracle, PostgreSQL, MySQL, NoSQL</p>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-icon">🛠️</span>
+                        <h3 class="skill-title">Tools & Workflow</h3>
+                        <p class="skill-description">Git/GitHub, Docker, Anaconda, LaTeX</p>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-icon">🌍</span>
+                        <h3 class="skill-title">Languages</h3>
+                        <p class="skill-description">English (Proficient)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scholarship Section -->
+        <section id="scholarship" class="section">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2 class="section-title">Scholarship</h2>
+                </div>
+                
+                <div class="card fade-in">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="timeline-title">MMU High Achievers Research Scholarship</div>
+                            <div class="timeline-subtitle">Multimedia University, Cyberjaya, Malaysia</div>
+                        </div>
+                        <span class="timeline-date">Aug 2024 – July 2026</span>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; <span id="year"></span> Rasel Ahmed. Built with clean HTML, CSS & JS.</p>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; <span id="year"></span> Rasel Ahmed. Built with precision and passion.</p>
         </div>
     </footer>
 
