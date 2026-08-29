@@ -51,7 +51,7 @@
     "authors": ["F. S. Prity", "N. Fahad", "R. Ahmed", "M. K. Morol", "K. O. M. Goh", "R. J. Sadib", "K. A. Rahman"],
     "citations": 0,
     "quartile": "Scopus",
-    "doi": ""
+    "doi": "https://doi.org/10.1063/5.0299187"
   },
   {
     "title": "MIC: Medical image classification using chest X-ray (COVID-19 & pneumonia) dataset with the help of CNN and customized CNN",
@@ -60,6 +60,6 @@
     "authors": ["N. Fahad", "R. Ahmed", "F. Jahan", "R. J. Sadib", "M. K. Morol", "M. A. A. Jubair"],
     "citations": 4,
     "quartile": "Scopus",
-    "doi": ""
+    "doi": "https://dl.acm.org/doi/abs/10.1145/3723178.3723312"
   }
 ]
