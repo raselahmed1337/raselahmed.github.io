@@ -16,5 +16,6 @@ This repository contains the source code for my personal academic portfolio webs
 - `script.js`: Lightweight animations and dynamic elements.
 - `README.md`: Documentation.
 
+
 ## 📄 License
 © 2026 Rasel Ahmed. All rights reserved.

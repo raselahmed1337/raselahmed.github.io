@@ -1,4 +1,4 @@
-// Update Footer Year
+// Update Footer Year dynamically
 document.getElementById('year').textContent = new Date().getFullYear();
 
 // Scroll Fade-In Animation
