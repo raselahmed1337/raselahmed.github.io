@@ -1,0 +1,250 @@
+import os
+
+# 1. Define the folder name
+folder_name = "rasel-portfolio"
+
+# 2. Create the folder
+os.makedirs(folder_name, exist_ok=True)
+print(f"✅ Created folder: '{folder_name}'")
+
+# 3. Define the content for index.html
+index_html_content = """<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rasel Ahmed | Prospective PhD Researcher</title>
+    <meta name="description" content="Prospective PhD researcher specializing in Machine Learning, Explainable AI, Agentic AI, and Healthcare Informatics.">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --text-color: #1f2937;
+            --bg-color: #ffffff;
+            --secondary-bg: #f9fafb;
+            --border-color: #e5e7eb;
+            --muted-text: #6b7280;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+        header { text-align: center; padding-bottom: 2.5rem; border-bottom: 1px solid var(--border-color); margin-bottom: 2.5rem; }
+        h1 { font-size: 2.75rem; font-weight: 800; margin-bottom: 0.5rem; color: #111827; letter-spacing: -0.025em; }
+        .subtitle { font-size: 1.25rem; color: var(--muted-text); margin-bottom: 1.5rem; font-weight: 400; }
+        .social-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+        .social-links a { color: var(--primary-color); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: color 0.2s ease; }
+        .social-links a:hover { color: var(--primary-hover); text-decoration: underline; }
+        section { margin-bottom: 3.5rem; }
+        h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--border-color); color: #111827; }
+        .item { margin-bottom: 2rem; }
+        .item-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 0.5rem; }
+        .item-title { font-weight: 700; font-size: 1.125rem; color: #111827; }
+        .item-subtitle { font-weight: 500; color: var(--muted-text); font-size: 1rem; }
+        .item-date { color: var(--muted-text); font-size: 0.9rem; white-space: nowrap; font-weight: 500; }
+        .item-description { margin-top: 0.75rem; color: #374151; }
+        .item-description ul { margin-left: 1.25rem; margin-top: 0.5rem; }
+        .item-description li { margin-bottom: 0.35rem; }
+        .pub-section-title { font-size: 1.1rem; font-weight: 700; margin: 1.5rem 0 0.75rem; color: #374151; }
+        .publication { margin-bottom: 1.25rem; padding-left: 1rem; border-left: 3px solid var(--border-color); transition: border-left-color 0.2s ease; }
+        .publication:hover { border-left-color: var(--primary-color); }
+        .pub-title { font-weight: 600; color: #111827; line-height: 1.4; }
+        .pub-authors { color: #374151; font-size: 0.95rem; margin-top: 0.25rem; }
+        .pub-venue { color: var(--muted-text); font-size: 0.9rem; font-style: italic; margin-top: 0.15rem; }
+        .badge { display: inline-block; background-color: #dbeafe; color: #1e40af; font-size: 0.7rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 9999px; margin-left: 0.5rem; vertical-align: middle; text-transform: uppercase; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+        .skill-category h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--primary-color); }
+        .skill-category p { font-size: 0.95rem; color: #374151; line-height: 1.5; }
+        footer { text-align: center; padding: 2.5rem 0; color: var(--muted-text); font-size: 0.875rem; border-top: 1px solid var(--border-color); margin-top: 4rem; }
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .item-header { flex-direction: column; }
+            .item-date { margin-top: 0.25rem; }
+            .container { padding: 2rem 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Rasel Ahmed</h1>
+            <p class="subtitle">Prospective PhD Researcher | Machine Learning, Explainable AI & Agentic AI</p>
+            <div class="social-links">
+                <a href="mailto:raselahmed1337@gmail.com">✉️ Email</a>
+                <a href="https://scholar.google.com/citations?user=1qLYFGYAAAAJ&hl=en" target="_blank">🎓 Google Scholar</a>
+                <a href="https://www.linkedin.com/in/raselahmed1337/" target="_blank">💼 LinkedIn</a>
+                <a href="https://www.researchgate.net/profile/Rasel-Ahmed" target="_blank">🔬 ResearchGate</a>
+                <a href="https://github.com/raselahmed1337" target="_blank">💻 GitHub</a>
+            </div>
+        </header>
+
+        <section id="profile">
+            <h2>Research Profile</h2>
+            <p>Prospective PhD researcher with a Software Engineering degree and research experience in machine learning, explainable AI, healthcare informatics, and mathematical optimization, alongside a growing interest in agentic AI. My FRGS-funded master’s research focuses on mathematical model development and optimization, while my earlier work addressed dementia and mental-state prediction and medical-image analysis. I have co-authored five journal articles (four published in Q1/Q2) and three conference papers, including a first-author IEEE EEEIC-2025 paper, with more than 88 citations and collaborations spanning Bangladesh, the USA, the UK, and Malaysia. Through doctoral study, I aim to develop reliable, interpretable, and agentic AI systems for healthcare and other high-impact decision-making applications.</p>
+        </section>
+
+        <section id="interests">
+            <h2>Research Interests</h2>
+            <p>Machine Learning · Explainable AI · Agentic AI · Healthcare Informatics · Mathematical Optimization · Artificial Intelligence</p>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Master’s by Research in Artificial Intelligence and Engineering</div>
+                        <div class="item-subtitle">Multimedia University (MMU), Cyberjaya, Malaysia</div>
+                    </div>
+                    <div class="item-date">Aug 2024 – July 2026</div>
+                </div>
+                <div class="item-description">
+                    <ul>
+                        <li><strong>Research Focus:</strong> Mathematical Modeling, Optimization, Agentic AI</li>
+                        <li><strong>Funding:</strong> Fundamental Research Grant Scheme (FRGS)</li>
+                        <li><strong>Supervisor:</strong> Dr. Tan Wooi Nee</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">B.Sc. in Software Engineering</div>
+                        <div class="item-subtitle">American International University–Bangladesh (AIUB)</div>
+                    </div>
+                    <div class="item-date">Sept 2019 – Aug 2024</div>
+                </div>
+                <div class="item-description">
+                    <ul>
+                        <li><strong>CGPA:</strong> 3.76 / 4.00 | <strong>Faculty:</strong> Science and Technology</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Research Experience</h2>
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Graduate Research Assistant</div>
+                        <div class="item-subtitle">Multimedia University (MMU), Cyberjaya, Malaysia</div>
+                    </div>
+                    <div class="item-date">Aug 2024 – July 2026</div>
+                </div>
+                <div class="item-description">
+                    <ul>
+                        <li>Conducted FRGS-funded master’s research by developing a two-stage load-scheduling optimization model, formulating operational constraints, and evaluating demand- and supply-side trade-offs.</li>
+                        <li>Prepared a first-author IEEE conference paper through model development, validation, and technical writing under the supervision of Assistant Professor Dr. Tan Wooi Nee.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Research Assistant (Intern → Full-time)</div>
+                        <div class="item-subtitle">Artificial Intelligence Research and Innovation Lab (AIRIL), Bangladesh</div>
+                    </div>
+                    <div class="item-date">Sept 2023 – Mar 2024</div>
+                </div>
+                <div class="item-description">
+                    <ul>
+                        <li>Built and evaluated prediction workflows using feature selection, ensemble learning, and explainable AI for dementia, mental health, and student performance.</li>
+                        <li>Contributed to CNN-based medical-image classification, data analysis, and peer-reviewed manuscript preparation under the supervision of Prof. Dr. Md. Asraf Ali.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Research Trainee Intern</div>
+                        <div class="item-subtitle">Islami Bank Training and Research Academy, Bangladesh</div>
+                    </div>
+                    <div class="item-date">Oct 2023 – Dec 2023</div>
+                </div>
+                <div class="item-description">
+                    <ul>
+                        <li>Analyzed foreign-exchange data from Islami Bank Bangladesh PLC and summarized findings for research reporting.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>Selected Publications</h2>
+            <div class="pub-section-title">Journal Articles</div>
+            <div class="publication">
+                <div class="pub-title">HyOPTEnsemble: Custom-weighted soft-voting hyperparameter optimization ensemble model with explainable AI for predicting mental state among university students <span class="badge">Q1</span></div>
+                <div class="pub-authors"><strong>Ahmed, R.</strong>, Fahad, N., Bhattacharjee, K., Miah, M. S. U., & Hossen, M. J. (2026).</div>
+                <div class="pub-venue">Discover Artificial Intelligence, 6, Article 136.</div>
+            </div>
+            <div class="publication">
+                <div class="pub-title">Generative artificial intelligence in clinical practice: A mini-review of applications, benefits, and limitations (2020–2025) <span class="badge">Q1</span></div>
+                <div class="pub-authors">Fahad, N., Benta Hasan, S., <strong>Ahmed, R.</strong>, Islam Rabbi, R., Ahmed, F., Hossen, M. J., & Liew, T. H. (2025).</div>
+                <div class="pub-venue">Frontiers in Digital Health, 7, 1653369.</div>
+            </div>
+            <div class="publication">
+                <div class="pub-title">A novel integrated logistic regression model enhanced with recursive feature elimination and explainable artificial intelligence for dementia prediction <span class="badge">Q1</span></div>
+                <div class="pub-authors"><strong>Ahmed, R.</strong>, Fahad, N., Miah, M. S. U., Hossen, M. J., Morol, M. K., Mahmud, M., & Rahman, M. M. (2024).</div>
+                <div class="pub-venue">Healthcare Analytics, 6, 100362.</div>
+            </div>
+            <div class="publication">
+                <div class="pub-title">Preventing students’ mental health problems with the help of data mining <span class="badge">Q3</span></div>
+                <div class="pub-authors">Hossain, M. N., Fahad, N., <strong>Ahmed, R.</strong>, Sen, A., Al Huda, M. S., & Hossen, M. I. (2024).</div>
+                <div class="pub-venue">International Journal of Computing, 23(1), 101–108.</div>
+            </div>
+
+            <div class="pub-section-title">Conference Papers</div>
+            <div class="publication">
+                <div class="pub-title">Two-stage load scheduling optimization for balancing demand-side and supply-side objectives <span class="badge">Scopus, WoS</span></div>
+                <div class="pub-authors"><strong>Ahmed, R.</strong>, Tan, W. N., Gan, M. T., & Yip, S. C. (2025, July).</div>
+                <div class="pub-venue">In 2025 IEEE International Conference on Environment and Electrical Engineering and 2025 IEEE Industrial and Commercial Power Systems Europe.</div>
+            </div>
+            <div class="publication">
+                <div class="pub-title">Advancements in human movement monitoring: A comprehensive approach leveraging deep learning and machine learning techniques <span class="badge">Scopus</span></div>
+                <div class="pub-authors">Prity, F. S., Fahad, N., <strong>Ahmed, R.</strong>, Morol, M. K., Goh, K. O. M., Sadib, R. J., & Rahman, K. A. (2025, October).</div>
+                <div class="pub-venue">In AIP Conference Proceedings, 3367(1), 020001.</div>
+            </div>
+            <div class="publication">
+                <div class="pub-title">MIC: Medical image classification using chest X-ray (COVID-19 & pneumonia) dataset with the help of CNN and customized CNN <span class="badge">Scopus</span></div>
+                <div class="pub-authors">Fahad, N., <strong>Ahmed, R.</strong>, Jahan, F., Jamal Sadib, R., Morol, M. K., & Jubair, M. A. A. (2024, October).</div>
+                <div class="pub-venue">In Proceedings of the 3rd International Conference on Computing Advancements, 1007–1013.</div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category"><h3>🤖 AI & Research</h3><p>Machine Learning, Ensemble Learning, Explainable AI, Agentic AI</p></div>
+                <div class="skill-category"><h3>📊 Quantitative Methods</h3><p>Experimental Design, Mathematical Modeling, Optimization, Model Evaluation</p></div>
+                <div class="skill-category"><h3>💻 Programming</h3><p>Python, C/C++, Bash, Rust</p></div>
+                <div class="skill-category"><h3>🗄️ Databases</h3><p>Oracle, PostgreSQL, MySQL, NoSQL</p></div>
+                <div class="skill-category"><h3>🛠️ Tools & Workflow</h3><p>Git/GitHub, Docker, Anaconda, LaTeX</p></div>
+                <div class="skill-category"><h3>🌍 Languages</h3><p>English (Proficient)</p></div>
+            </div>
+        </section>
+
+        <section id="scholarship">
+            <h2>Scholarship</h2>
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">MMU High Achievers Research Scholarship</div>
+                        <div class="item-subtitle">Multimedia University, Cyberjaya, Malaysia</div>
+                    </div>
+                    <div class="item-date">Aug 2024 – July 2026</div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Rasel Ahmed. Built with clean HTML & CSS.</p>
+        </footer>
+    </div>
+</body>
+</html>"""
+
