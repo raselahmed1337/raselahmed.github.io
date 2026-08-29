@@ -24,7 +24,7 @@
     "authors": ["M. N. Hossain", "N. Fahad", "R. Ahmed", "A. Sen", "M. S. Al Huda", "M. I. Hossen"],
     "citations": 15,
     "quartile": "Q3",
-    "doi": ""
+    "doi": "https://doi.org/10.47839/ijc.23.1.3441"
   },
   {
     "title": "HyOPTEnsemble: Custom-weighted soft-voting hyperparameter optimization ensemble model with explainable AI for predicting mental state among university students",
@@ -33,7 +33,7 @@
     "authors": ["R. Ahmed", "N. Fahad", "K. Bhattacharjee", "M. S. U. Miah", "M. J. Hossen"],
     "citations": 3,
     "quartile": "Q1",
-    "doi": ""
+    "doi": "https://doi.org/10.1007/s44163-025-00708-9"
   },
   {
     "title": "Two-stage load scheduling optimization for balancing demand-side and supply-side objectives",
@@ -42,7 +42,7 @@
     "authors": ["R. Ahmed", "W. N. Tan", "M. T. Gan", "S. C. Yip"],
     "citations": 0,
     "quartile": "Scopus, Web of Science",
-    "doi": ""
+    "doi": "https://doi.org/10.1109/EEEIC/ICPSEurope64998.2025.11169218"
   },
   {
     "title": "Advancements in human movement monitoring: A comprehensive approach leveraging deep learning and machine learning techniques",
