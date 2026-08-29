@@ -3,13 +3,44 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 // Navbar scroll effect
 const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
+if (navbar) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+}
+
+// --- DARK MODE TOGGLE LOGIC ---
+const themeToggle = document.getElementById('theme-toggle');
+const currentTheme = localStorage.getItem('theme');
+
+// Check for saved user preference or system preference
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    if (currentTheme === 'dark') {
+        themeToggle.textContent = '☀️';
+    }
+} else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    themeToggle.textContent = '☀️';
+}
+
+themeToggle.addEventListener('click', () => {
+    let theme = document.documentElement.getAttribute('data-theme');
+    if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        themeToggle.textContent = '🌙';
     } else {
-        navbar.classList.remove('scrolled');
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        themeToggle.textContent = '☀️';
     }
 });
+// --- END DARK MODE LOGIC ---
 
 // Intersection Observer for fade-in animations
 document.addEventListener('DOMContentLoaded', () => {
@@ -40,6 +71,11 @@ document.addEventListener('DOMContentLoaded', () => {
 async function loadPublications() {
     const container = document.getElementById('publications-list');
     
+    if (!container) {
+        console.warn('Publications container not found in HTML.');
+        return;
+    }
+    
     try {
         const response = await fetch('publications.json');
         
@@ -62,22 +98,22 @@ async function loadPublications() {
             return (b.citations || 0) - (a.citations || 0);
         });
 
-        let totalCitations = 0;
         let html = '';
         
         papers.forEach((paper, index) => {
-            totalCitations += paper.citations || 0;
-            
             // Bold your name
             const authorsStr = paper.authors.map(a => {
                 const name = a.name || a;
                 return name.toLowerCase().includes('ahmed') ? `<strong style="color: var(--text-primary);">${name}</strong>` : name;
             }).join(', ');
             
-            // Determine badge class
+            // Determine badge class based on quartile/index
             let badgeClass = 'badge-scopus';
-            if (paper.quartile === 'Q1') badgeClass = 'badge-q1';
-            else if (paper.quartile === 'Q3') badgeClass = 'badge-q3';
+            const q = (paper.quartile || '').toUpperCase();
+            if (q === 'Q1') badgeClass = 'badge-q1';
+            else if (q === 'Q2') badgeClass = 'badge-q1'; 
+            else if (q === 'Q3') badgeClass = 'badge-q3';
+            else if (q.includes('SCOPUS')) badgeClass = 'badge-scopus';
             
             const quartileBadge = paper.quartile ? `<span class="badge ${badgeClass}">${paper.quartile}</span>` : '';
             const citationBadge = `<span class="badge badge-citation">${paper.citations || 0} Citations</span>`;
@@ -102,7 +138,7 @@ async function loadPublications() {
 
         container.innerHTML = html;
         
-        // Re-trigger animations for new elements
+        // Re-trigger animations for newly injected publication cards
         const newFaders = container.querySelectorAll('.fade-in');
         const appearOptions = { threshold: 0.1 };
         const appearOnScroll = new IntersectionObserver((entries) => {
@@ -116,6 +152,6 @@ async function loadPublications() {
         
     } catch (error) {
         console.error('Error loading publications:', error);
-        container.innerHTML = `<p style="text-align: center; color: #ef4444; padding: 3rem;">⚠️ Could not load publications. Please ensure 'publications.json' exists.</p>`;
+        container.innerHTML = `<p style="text-align: center; color: #ef4444; padding: 3rem;">⚠️ Could not load publications. Please ensure 'publications.json' exists in the repository root.</p>`;
     }
 }
