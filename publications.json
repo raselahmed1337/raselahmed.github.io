@@ -4,7 +4,7 @@
     "year": 2026,
     "venue": "Discover Artificial Intelligence",
     "authors": ["R. Ahmed", "N. Fahad", "K. Bhattacharjee", "M. S. U. Miah", "M. J. Hossen"],
-    "citations": 0,
+    "citations": 3,
     "doi": ""
   },
   {
@@ -12,7 +12,7 @@
     "year": 2025,
     "venue": "Frontiers in Digital Health",
     "authors": ["N. Fahad", "S. Benta Hasan", "R. Ahmed", "R. Islam Rabbi", "F. Ahmed", "M. J. Hossen", "T. H. Liew"],
-    "citations": 0,
+    "citations": 15,
     "doi": ""
   },
   {
@@ -36,7 +36,7 @@
     "year": 2024,
     "venue": "Healthcare Analytics",
     "authors": ["R. Ahmed", "N. Fahad", "M. S. U. Miah", "M. J. Hossen", "M. K. Morol", "M. Mahmud", "M. M. Rahman"],
-    "citations": 0,
+    "citations": 46,
     "doi": ""
   },
   {
@@ -44,7 +44,7 @@
     "year": 2024,
     "venue": "International Conference on Computing Advancements",
     "authors": ["N. Fahad", "R. Ahmed", "F. Jahan", "R. Jamal Sadib", "M. K. Morol", "M. A. A. Jubair"],
-    "citations": 0,
+    "citations": 5,
     "doi": ""
   },
   {
@@ -52,7 +52,7 @@
     "year": 2024,
     "venue": "International Journal of Computing",
     "authors": ["M. N. Hossain", "N. Fahad", "R. Ahmed", "A. Sen", "M. S. Al Huda", "M. I. Hossen"],
-    "citations": 0,
+    "citations": 15,
     "doi": ""
   }
 ]
