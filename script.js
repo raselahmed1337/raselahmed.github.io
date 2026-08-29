@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
     loadPublications();
 });
 
-// Fetches and renders publications from the JSON file
 async function loadPublications() {
     const container = document.getElementById('publications-list');
     const totalCitationsEl = document.getElementById('total-citations');
@@ -34,7 +33,6 @@ async function loadPublications() {
     try {
         const response = await fetch('publications.json');
         
-        // Check if the file actually exists
         if (!response.ok) {
             throw new Error(`File not found (Status: ${response.status}). Please ensure 'publications.json' is in the root of your GitHub repository.`);
         }
@@ -61,13 +59,17 @@ async function loadPublications() {
                 return name.includes('Ahmed') ? `<strong>${name}</strong>` : name;
             }).join(', ');
             
+            // Create badges
+            const quartileBadge = paper.quartile ? `<span class="badge">${paper.quartile}</span>` : '';
+            const citationBadge = `<span class="badge">${paper.citations || 0} Citations</span>`;
+            
             // Add DOI link if available
-            const doiLink = paper.doi ? `<a href="https://doi.org/${paper.doi}" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">DOI ↗</a>` : '';
+            const doiLink = paper.doi ? `<a href="https://doi.org/${paper.doi}" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600; font-size: 0.85rem; margin-left: 0.5rem;">DOI ↗</a>` : '';
             
             html += `
                 <div class="publication">
-                    <div class="pub-title">${paper.title} <span class="badge">${paper.citations || 0} Citations</span></div>
-                    <div class="pub-authors">${authorsStr} (${paper.year || 'N/A'}). ${doiLink}</div>
+                    <div class="pub-title">${paper.title} ${quartileBadge} ${citationBadge} ${doiLink}</div>
+                    <div class="pub-authors">${authorsStr} (${paper.year || 'N/A'}). </div>
                     <div class="pub-venue">${paper.venue || 'Unknown Venue'}</div>
                 </div>
             `;
@@ -77,7 +79,6 @@ async function loadPublications() {
         totalCitationsEl.textContent = totalCitations;
     } catch (error) {
         console.error('Error loading publications:', error);
-        // Display the exact error on the page for easy debugging
         container.innerHTML = `<p style="color: #dc2626; font-weight: 500; margin-top: 1rem;">⚠️ Could not load publications. <br><small style="font-weight: 400; color: #6b7280;">Error: ${error.message}</small></p>`;
     }
 }
