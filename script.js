@@ -28,14 +28,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Fetches and renders publications from the JSON file
 async function loadPublications() {
+    const container = document.getElementById('publications-list');
+    const totalCitationsEl = document.getElementById('total-citations');
+    
     try {
         const response = await fetch('publications.json');
+        
+        // Check if the file actually exists
+        if (!response.ok) {
+            throw new Error(`File not found (Status: ${response.status}). Please ensure 'publications.json' is in the root of your GitHub repository.`);
+        }
+
         const papers = await response.json();
-        const container = document.getElementById('publications-list');
-        const totalCitationsEl = document.getElementById('total-citations');
         
         if (!papers || papers.length === 0) {
-            container.innerHTML = '<p>No publications found.</p>';
+            container.innerHTML = '<p>No publications found in the JSON file.</p>';
             return;
         }
 
@@ -70,6 +77,7 @@ async function loadPublications() {
         totalCitationsEl.textContent = totalCitations;
     } catch (error) {
         console.error('Error loading publications:', error);
-        document.getElementById('publications-list').innerHTML = '<p>Could not load publications. Please check if publications.json exists.</p>';
+        // Display the exact error on the page for easy debugging
+        container.innerHTML = `<p style="color: #dc2626; font-weight: 500; margin-top: 1rem;">⚠️ Could not load publications. <br><small style="font-weight: 400; color: #6b7280;">Error: ${error.message}</small></p>`;
     }
 }
