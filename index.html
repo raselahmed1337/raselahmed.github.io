@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
+    <!-- Animated Background Elements -->
+    <div class="fluid-bg"></div>
+    <div class="particles" id="particles"></div>
 
     <!-- Navigation -->
     <nav class="navbar">
@@ -18,9 +21,9 @@
                 <li><a href="#profile">Profile</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#publications">Publications</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <!-- Dark Mode Toggle Button -->
                 <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">🌙</button></li>
             </ul>
         </div>
@@ -124,6 +127,65 @@
                         <li>Contributed to CNN-based medical-image classification, data analysis, and peer-reviewed manuscript preparation under the supervision of Prof. Dr. Md. Asraf Ali.</li>
                     </ul>
                 </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="card">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="timeline-title">Research Trainee Intern</div>
+                            <div class="timeline-subtitle">Islami Bank Training and Research Academy, Bangladesh</div>
+                        </div>
+                        <span class="timeline-date">Oct 2023 – Dec 2023</span>
+                    </div>
+                    <ul style="margin-left: 1.5rem; color: var(--text-secondary);">
+                        <li>Analyzed foreign-exchange data from Islami Bank Bangladesh PLC and summarized findings for research reporting.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section fade-in">
+            <h2 class="section-title">Key Projects</h2>
+            <div class="skills-grid">
+                
+                <div class="skill-card project-card">
+                    <div class="project-header">
+                        <span class="skill-icon">⚡</span>
+                        <h3 class="skill-title">Two-Stage Load Scheduling</h3>
+                    </div>
+                    <p class="skill-description">Developed a mathematical optimization model to balance demand-side and supply-side objectives in power systems. Formulated operational constraints and evaluated trade-offs using FRGS-funded research methodologies.</p>
+                    <div class="project-tags">
+                        <span class="badge badge-scopus">Optimization</span>
+                        <span class="badge badge-citation">Math Modeling</span>
+                    </div>
+                </div>
+
+                <div class="skill-card project-card">
+                    <div class="project-header">
+                        <span class="skill-icon">🧠</span>
+                        <h3 class="skill-title">HyOPTEnsemble for Mental State</h3>
+                    </div>
+                    <p class="skill-description">Built a custom-weighted soft-voting hyperparameter optimization ensemble model with Explainable AI (XAI) to predict mental states among university students with high accuracy.</p>
+                    <div class="project-tags">
+                        <span class="badge badge-q1">Q1 Journal</span>
+                        <span class="badge badge-citation">Ensemble Learning</span>
+                    </div>
+                </div>
+
+                <div class="skill-card project-card">
+                    <div class="project-header">
+                        <span class="skill-icon">🫁</span>
+                        <h3 class="skill-title">CNN Medical Image Classifier</h3>
+                    </div>
+                    <p class="skill-description">Designed and trained customized Convolutional Neural Networks (CNN) for classifying Chest X-rays into COVID-19, Pneumonia, and Normal categories, contributing to automated diagnostic tools.</p>
+                    <div class="project-tags">
+                        <span class="badge badge-scopus">Deep Learning</span>
+                        <span class="badge badge-citation">Computer Vision</span>
+                    </div>
+                </div>
+
             </div>
         </section>
 
