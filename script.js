@@ -1,36 +1,99 @@
-// Particle Generator
-function createParticles() {
-    const container = document.getElementById('particles');
-    for(let i=0; i<20; i++) {
-        const p = document.createElement('div');
-        p.className = 'particle';
-        p.style.left = Math.random() * 100 + '%';
-        p.style.width = p.style.height = (Math.random() * 20 + 5) + 'px';
-        p.style.animationDuration = (Math.random() * 10 + 10) + 's';
-        p.style.animationDelay = (Math.random() * 5) + 's';
-        container.appendChild(p);
+// --- NEURAL NETWORK ANIMATION ---
+const canvas = document.getElementById('neural-canvas');
+const ctx = canvas.getContext('2d');
+let neurons = [];
+const neuronCount = 60; // Number of nodes
+const connectionDistance = 150; // Max distance to draw a synapse
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+class Neuron {
+    constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.vx = (Math.random() - 0.5) * 0.5; // Slow drift speed
+        this.vy = (Math.random() - 0.5) * 0.5;
+        this.radius = Math.random() * 2 + 1;
+    }
+
+    update() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        // Bounce off edges
+        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+    }
+
+    draw() {
+        const style = getComputedStyle(document.documentElement);
+        const color = style.getPropertyValue('--neuron-color').trim();
+        
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = color;
+        ctx.fill();
     }
 }
 
-// Dark Mode Logic
+function initNeurons() {
+    neurons = [];
+    for (let i = 0; i < neuronCount; i++) {
+        neurons.push(new Neuron());
+    }
+}
+
+function animateNeurons() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    const style = getComputedStyle(document.documentElement);
+    const synapseColor = style.getPropertyValue('--synapse-color').trim();
+
+    neurons.forEach(neuron => {
+        neuron.update();
+        neuron.draw();
+
+        // Draw connections (synapses)
+        neurons.forEach(other => {
+            const dx = neuron.x - other.x;
+            const dy = neuron.y - other.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < connectionDistance) {
+                const opacity = 1 - (dist / connectionDistance);
+                ctx.beginPath();
+                ctx.moveTo(neuron.x, neuron.y);
+                ctx.lineTo(other.x, other.y);
+                ctx.strokeStyle = synapseColor.replace(')', `, ${opacity})`).replace('rgba', 'rgba');
+                ctx.lineWidth = 0.5;
+                ctx.stroke();
+            }
+        });
+    });
+
+    requestAnimationFrame(animateNeurons);
+}
+
+// --- DARK MODE LOGIC ---
 const toggle = document.getElementById('theme-toggle');
 const currentTheme = localStorage.getItem('theme');
-if(currentTheme) document.documentElement.setAttribute('data-theme', currentTheme);
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    toggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+}
 
 toggle.addEventListener('click', () => {
     let theme = document.documentElement.getAttribute('data-theme');
-    if(theme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-        toggle.textContent = '🌙';
-    } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-        toggle.textContent = '☀️';
-    }
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    toggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
 });
 
-// Load Publications from JSON
+// --- PUBLICATIONS LOADER ---
 async function loadPublications() {
     try {
         const res = await fetch('publications.json');
@@ -54,10 +117,16 @@ async function loadPublications() {
             `;
         });
         list.innerHTML = html;
-    } catch(e) { console.log('Loading local data...'); }
+    } catch(e) { 
+        document.getElementById('publications-list').innerHTML = '<p style="color:var(--text-muted)">Publications loading...</p>';
+    }
 }
 
+// --- INITIALIZATION ---
+window.addEventListener('resize', resizeCanvas);
 document.addEventListener('DOMContentLoaded', () => {
-    createParticles();
+    resizeCanvas();
+    initNeurons();
+    animateNeurons();
     loadPublications();
 });
