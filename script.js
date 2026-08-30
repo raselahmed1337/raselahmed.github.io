@@ -1,9 +1,9 @@
-// --- NEURAL NETWORK ANIMATION ---
+// --- FLUID NEURAL NETWORK ANIMATION ---
 const canvas = document.getElementById('neural-canvas');
 const ctx = canvas.getContext('2d');
 let neurons = [];
-const neuronCount = 60; // Number of nodes
-const connectionDistance = 150; // Max distance to draw a synapse
+const neuronCount = 50; // Slightly fewer for cleaner look
+const connectionDistance = 180; // Longer connections for fluidity
 
 function resizeCanvas() {
     canvas.width = window.innerWidth;
@@ -14,16 +14,16 @@ class Neuron {
     constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.vx = (Math.random() - 0.5) * 0.5; // Slow drift speed
-        this.vy = (Math.random() - 0.5) * 0.5;
-        this.radius = Math.random() * 2 + 1;
+        // Slower, more organic movement
+        this.vx = (Math.random() - 0.5) * 0.3; 
+        this.vy = (Math.random() - 0.5) * 0.3;
+        this.radius = Math.random() * 2 + 1.5;
     }
 
     update() {
         this.x += this.vx;
         this.y += this.vy;
 
-        // Bounce off edges
         if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
         if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
     }
@@ -56,7 +56,6 @@ function animateNeurons() {
         neuron.update();
         neuron.draw();
 
-        // Draw connections (synapses)
         neurons.forEach(other => {
             const dx = neuron.x - other.x;
             const dy = neuron.y - other.y;
@@ -67,8 +66,9 @@ function animateNeurons() {
                 ctx.beginPath();
                 ctx.moveTo(neuron.x, neuron.y);
                 ctx.lineTo(other.x, other.y);
-                ctx.strokeStyle = synapseColor.replace(')', `, ${opacity})`).replace('rgba', 'rgba');
-                ctx.lineWidth = 0.5;
+                // Fluid line drawing
+                ctx.strokeStyle = synapseColor.replace(')', `, ${opacity * 0.5})`).replace('rgba', 'rgba');
+                ctx.lineWidth = 0.8;
                 ctx.stroke();
             }
         });
@@ -106,7 +106,7 @@ async function loadPublications() {
                           pub.quartile ? `<span class="badge badge-cite">${pub.quartile}</span>` : '';
             
             html += `
-                <div class="pub-card">
+                <div class="pub-card fade-in">
                     <div class="pub-title">${pub.title}</div>
                     <div class="pub-meta">
                         ${badge}
@@ -117,6 +117,14 @@ async function loadPublications() {
             `;
         });
         list.innerHTML = html;
+        
+        // Re-trigger animations for new elements
+        const newFaders = list.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        newFaders.forEach(f => observer.observe(f));
+
     } catch(e) { 
         document.getElementById('publications-list').innerHTML = '<p style="color:var(--text-muted)">Publications loading...</p>';
     }
@@ -129,4 +137,16 @@ document.addEventListener('DOMContentLoaded', () => {
     initNeurons();
     animateNeurons();
     loadPublications();
+
+    // Scroll Observer for Fade-ins
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        });
+    }, appearOptions);
+    faders.forEach(fader => { appearOnScroll.observe(fader); });
 });
